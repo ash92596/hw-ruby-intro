@@ -7,6 +7,7 @@ def sum arr
 end
 
 def max_2_sum arr
+  
   if arr.length > 1
       return arr.max + arr.sort[-2]
    
@@ -20,7 +21,25 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  
+    if arr.length > 1
+      pairs = arr.combination(2).select { |x, y| x + y == n }
+      if pairs.empty?
+        return false
+      else
+        return true
+      end
+   
+  elsif arr.length == 1
+      if arr == n
+        return true
+      else
+        return false
+      end
+  else
+      return false
+  end
+  
 end
 
 # Part 2
